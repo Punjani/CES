@@ -1,0 +1,27 @@
+﻿@if (Model.Count == 0)
+{
+    <h3>No Users Available</h3>
+}
+else
+{    
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+        <h3>List of Users</h3>
+        <div>
+            <table class="table table-bordered table-responsive table-hover">
+                <tr>
+
+                    <th>User Name</th>
+                    <th>Password</th>
+                </tr>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.userName</td>
+                        <td>@user.password</td>
+                    </tr>
+                }
+            </table>
+            @Html.ActionLink("Save", "Save", "Home")
+        </div>
+    </div>
+}
